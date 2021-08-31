@@ -8,6 +8,7 @@
 namespace Cloudflare\API\Adapter;
 
 use Cloudflare\API\Auth\Auth;
+use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -21,9 +22,10 @@ interface Adapter
      * Adapter constructor.
      *
      * @param Auth $auth
+     * @param Client $client
      * @param string $baseURI
      */
-    public function __construct(Auth $auth, string $baseURI);
+    public function __construct(Auth $auth, Client $client, string $baseURI);
 
     /**
      * Sends a GET request.
